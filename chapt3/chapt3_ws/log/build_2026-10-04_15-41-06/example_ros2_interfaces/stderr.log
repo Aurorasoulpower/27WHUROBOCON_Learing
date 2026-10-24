@@ -1,4 +1,0 @@
-[31mCMake Error at CMakeLists.txt:27 (rosidl_default_generators):
-  Unknown CMake command "rosidl_default_generators".
-
-[0m

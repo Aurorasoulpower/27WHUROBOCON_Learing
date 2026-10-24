@@ -1,2 +1,0 @@
-Invoking command in '/home/aurora/d2lros2/chapt3/chapt3_ws/build/example_topic_rclcpp': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/aurora/d2lros2/chapt3/chapt3_ws/build/example_topic_rclcpp -- -j24 -l24
-Invoked command in '/home/aurora/d2lros2/chapt3/chapt3_ws/build/example_topic_rclcpp' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/aurora/d2lros2/chapt3/chapt3_ws/build/example_topic_rclcpp -- -j24 -l24

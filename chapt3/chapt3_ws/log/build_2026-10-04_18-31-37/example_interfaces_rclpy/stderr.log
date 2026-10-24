@@ -1,5 +1,0 @@
-  File "/home/aurora/d2lros2/chapt3/chapt3_ws/install/example_interfaces_rclpy/lib/python3.10/site-packages/example_interfaces_rclpy/example_interfaces_robot_02.py", line 15
-    def robot_status_callback(self,msg)
-                                       ^
-SyntaxError: expected ':'
-

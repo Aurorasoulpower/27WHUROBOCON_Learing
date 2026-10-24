@@ -1,5 +1,0 @@
-  File "/home/aurora/d2lros2/chapt3/chapt3_ws/install/example_service_rclpy/lib/python3.10/site-packages/example_service_rclpy/service_server_02.py", line 17
-    def handle_add_two_ints(self,request,response)
-                                                  ^
-SyntaxError: expected ':'
-

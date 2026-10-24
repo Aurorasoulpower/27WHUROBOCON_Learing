@@ -1,6 +1,0 @@
-/home/aurora/d2lros2/build/first_node/CMakeFiles/uninstall.dir
-/home/aurora/d2lros2/build/first_node/CMakeFiles/first_node_uninstall.dir
-/home/aurora/d2lros2/build/first_node/CMakeFiles/first_node.dir
-/home/aurora/d2lros2/build/first_node/CMakeFiles/test.dir
-/home/aurora/d2lros2/build/first_node/CMakeFiles/edit_cache.dir
-/home/aurora/d2lros2/build/first_node/CMakeFiles/rebuild_cache.dir

@@ -1,4 +1,0 @@
-[console_scripts]
-topic_publisher_02 = example_topic_rclpy.topic_publisher_02:main
-topic_subscriber_02 = example_topic_rclpy.topic_subscriber_02:main
-
