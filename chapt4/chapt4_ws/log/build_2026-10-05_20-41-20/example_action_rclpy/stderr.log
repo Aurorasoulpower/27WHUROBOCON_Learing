@@ -1,5 +1,0 @@
-  File "/home/aurora/d2lros2/chapt4/chapt4_ws/install/example_action_rclpy/lib/python3.10/site-packages/example_action_rclpy/action_robot_02.py", line 19
-    def cancel_callback(self,goal_handle)
-                                         ^
-SyntaxError: expected ':'
-

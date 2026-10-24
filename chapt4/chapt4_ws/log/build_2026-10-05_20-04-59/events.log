@@ -1,7 +1,0 @@
-[0.000000] (-) TimerEvent: {}
-[0.000118] (-) JobUnselected: {'identifier': 'example_param_rclpy'}
-[0.000132] (-) JobUnselected: {'identifier': 'robot_control_interfaces'}
-[0.000142] (example_action_rclpy) JobQueued: {'identifier': 'example_action_rclpy', 'dependencies': OrderedDict([('robot_control_interfaces', '/home/aurora/d2lros2/chapt4/chapt4_ws/install/robot_control_interfaces')])}
-[0.000153] (example_action_rclpy) JobStarted: {'identifier': 'example_action_rclpy'}
-[0.002640] (example_action_rclpy) JobEnded: {'identifier': 'example_action_rclpy', 'rc': 1}
-[0.013017] (-) EventReactorShutdown: {}
