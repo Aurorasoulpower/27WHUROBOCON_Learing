@@ -1,0 +1,283 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3840" height="2160" viewBox="0 0 3840 2160">
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6"
+            markerWidth="12" markerHeight="12" orient="auto">
+      <path d="M1 1 L11 6 L1 11 Z" fill="#2f6690"/>
+    </marker>
+  </defs>
+  <rect width="3840" height="2160" fill="#ffffff"/>
+
+  <!-- Header -->
+  <rect x="120" y="72" width="3600" height="238" rx="28"
+        fill="#f7fbff" stroke="#c7ddec" stroke-width="3"/>
+  <rect x="120" y="72" width="16" height="238" rx="8" fill="#173f5f"/>
+  <text x="170" y="140" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="28" font-weight="700" fill="#2f6690" letter-spacing="4">
+    2027 ROBOCON · BR VISION SYSTEM
+  </text>
+  <text x="170" y="214" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="58" font-weight="700" fill="#173f5f">
+    003 绿色建塔区候选检测流程
+  </text>
+  <text x="170" y="270" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="27" fill="#486879">
+    从真实图像到结构化候选；本阶段不包含四边形拟合、PnP 或释放决策
+  </text>
+  <rect x="3020" y="106" width="650" height="170" rx="20"
+        fill="#edf7f2" stroke="#75b798" stroke-width="3"/>
+  <text x="3345" y="158" text-anchor="middle"
+        font-family="Noto Sans CJK SC, sans-serif"
+        font-size="24" font-weight="700" fill="#2f6f4e">当前图集验证</text>
+  <text x="3345" y="211" text-anchor="middle"
+        font-family="Noto Sans CJK SC, sans-serif"
+        font-size="43" font-weight="700" fill="#24613f">13 / 13 detected</text>
+  <text x="3345" y="250" text-anchor="middle"
+        font-family="Noto Sans CJK SC, sans-serif"
+        font-size="21" fill="#426653">每张图 1 个接受候选</text>
+
+  <!-- Pipeline frame -->
+  <rect x="100" y="350" width="3640" height="570" rx="30"
+        fill="#fbfdff" stroke="#a9c9df" stroke-width="3" stroke-dasharray="12 10"/>
+  <text x="140" y="402" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="27" font-weight="700" fill="#2f6690" letter-spacing="2">
+    GREEN CANDIDATE PIPELINE
+  </text>
+
+  <!-- 01 -->
+  <rect x="160" y="450" width="420" height="310" rx="24"
+        fill="#eef7fd" stroke="#7aaac8" stroke-width="3"/>
+  <rect x="160" y="450" width="420" height="62" rx="24" fill="#d9edf8"/>
+  <text x="370" y="490" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="27" font-weight="700" fill="#173f5f">01  输入图像</text>
+  <text x="370" y="562" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="25" fill="#19384d">实际场地照片</text>
+  <text x="370" y="608" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="23" fill="#486879">4096 × 3072</text>
+  <text x="370" y="652" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="21" fill="#486879">L1 己方区 / 公共区</text>
+  <text x="370" y="696" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="21" fill="#486879">测试图集 13 张</text>
+
+  <!-- 02 -->
+  <rect x="660" y="450" width="420" height="310" rx="24"
+        fill="#eef7fd" stroke="#7aaac8" stroke-width="3"/>
+  <rect x="660" y="450" width="420" height="62" rx="24" fill="#d9edf8"/>
+  <text x="870" y="490" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="27" font-weight="700" fill="#173f5f">02  预处理</text>
+  <text x="870" y="562" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="25" fill="#19384d">Gaussian 5 × 5</text>
+  <text x="870" y="608" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="23" fill="#486879">抑制像素噪声</text>
+  <text x="870" y="652" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="23" fill="#486879">BGR → HSV</text>
+  <text x="870" y="696" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="21" fill="#486879">不进行白平衡或调色</text>
+
+  <!-- 03 -->
+  <rect x="1160" y="450" width="420" height="310" rx="24"
+        fill="#eef7fd" stroke="#7aaac8" stroke-width="3"/>
+  <rect x="1160" y="450" width="420" height="62" rx="24" fill="#d9edf8"/>
+  <text x="1370" y="490" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="27" font-weight="700" fill="#173f5f">03  绿色分割</text>
+  <text x="1370" y="562" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="25" fill="#19384d">HSV 阈值候选</text>
+  <text x="1370" y="608" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="23" fill="#486879">H  35 – 90</text>
+  <text x="1370" y="652" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="23" fill="#486879">S  50 – 255</text>
+  <text x="1370" y="696" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="23" fill="#486879">V  60 – 255</text>
+
+  <!-- 04 -->
+  <rect x="1660" y="450" width="420" height="310" rx="24"
+        fill="#eef7fd" stroke="#7aaac8" stroke-width="3"/>
+  <rect x="1660" y="450" width="420" height="62" rx="24" fill="#d9edf8"/>
+  <text x="1870" y="490" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="27" font-weight="700" fill="#173f5f">04  掩膜整理</text>
+  <text x="1870" y="562" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="24" fill="#19384d">分辨率缩放形态学核</text>
+  <text x="1870" y="608" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="23" fill="#486879">4096 图像约 21 px</text>
+  <text x="1870" y="652" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="23" fill="#486879">开运算 + 闭运算</text>
+  <text x="1870" y="696" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="23" fill="#486879">封闭孔洞填充</text>
+
+  <!-- 05 -->
+  <rect x="2160" y="450" width="420" height="310" rx="24"
+        fill="#eef7fd" stroke="#7aaac8" stroke-width="3"/>
+  <rect x="2160" y="450" width="420" height="62" rx="24" fill="#d9edf8"/>
+  <text x="2370" y="490" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="27" font-weight="700" fill="#173f5f">05  区域聚合</text>
+  <text x="2370" y="562" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="24" fill="#19384d">连通区域提取</text>
+  <text x="2370" y="608" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="23" fill="#486879">邻近碎片归并</text>
+  <text x="2370" y="652" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="23" fill="#486879">距离随组件尺寸调整</text>
+  <text x="2370" y="696" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="21" fill="#486879">保留原始组件用于复核</text>
+
+  <!-- 06 -->
+  <rect x="2660" y="450" width="420" height="310" rx="24"
+        fill="#eef7fd" stroke="#7aaac8" stroke-width="3"/>
+  <rect x="2660" y="450" width="420" height="62" rx="24" fill="#d9edf8"/>
+  <text x="2870" y="490" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="27" font-weight="700" fill="#173f5f">06  质量筛选</text>
+  <text x="2870" y="562" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="24" fill="#19384d">面积比例 0.002 – 0.80</text>
+  <text x="2870" y="608" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="24" fill="#19384d">实心度 ≥ 0.65</text>
+  <text x="2870" y="652" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="23" fill="#486879">边界接触判断</text>
+  <text x="2870" y="696" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="23" fill="#486879">遮挡风险标记</text>
+
+  <!-- 07 -->
+  <rect x="3160" y="450" width="420" height="310" rx="24"
+        fill="#edf7f2" stroke="#75b798" stroke-width="3"/>
+  <rect x="3160" y="450" width="420" height="62" rx="24" fill="#d8eee2"/>
+  <text x="3370" y="490" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="27" font-weight="700" fill="#24583b">07  候选结果</text>
+  <rect x="3210" y="540" width="320" height="46" rx="12" fill="#f7fbf8"/>
+  <text x="3370" y="572" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="22" font-weight="700" fill="#2f6f4e">no_target</text>
+  <rect x="3210" y="598" width="320" height="46" rx="12" fill="#f7fbf8"/>
+  <text x="3370" y="630" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="22" font-weight="700" fill="#2f6f4e">detected</text>
+  <rect x="3210" y="656" width="320" height="46" rx="12" fill="#f7fbf8"/>
+  <text x="3370" y="688" text-anchor="middle" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="22" font-weight="700" fill="#2f6f4e">ambiguous_target</text>
+
+  <!-- Arrows -->
+  <line x1="580" y1="605" x2="650" y2="605" stroke="#2f6690" stroke-width="5" marker-end="url(#arrow)"/>
+  <line x1="1080" y1="605" x2="1150" y2="605" stroke="#2f6690" stroke-width="5" marker-end="url(#arrow)"/>
+  <line x1="1580" y1="605" x2="1650" y2="605" stroke="#2f6690" stroke-width="5" marker-end="url(#arrow)"/>
+  <line x1="2080" y1="605" x2="2150" y2="605" stroke="#2f6690" stroke-width="5" marker-end="url(#arrow)"/>
+  <line x1="2580" y1="605" x2="2650" y2="605" stroke="#2f6690" stroke-width="5" marker-end="url(#arrow)"/>
+  <line x1="3080" y1="605" x2="3150" y2="605" stroke="#2f6690" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <!-- Stage grouping -->
+  <rect x="140" y="800" width="1950" height="54" rx="18"
+        fill="#edf6fc" stroke="#c9ddea" stroke-width="2" stroke-dasharray="8 7"/>
+  <text x="1115" y="836" text-anchor="middle"
+        font-family="Noto Sans CJK SC, sans-serif"
+        font-size="22" font-weight="700" fill="#2f6690">绿色证据提取</text>
+  <rect x="2130" y="800" width="970" height="54" rx="18"
+        fill="#edf6fc" stroke="#c9ddea" stroke-width="2" stroke-dasharray="8 7"/>
+  <text x="2615" y="836" text-anchor="middle"
+        font-family="Noto Sans CJK SC, sans-serif"
+        font-size="22" font-weight="700" fill="#2f6690">候选形成与筛选</text>
+  <rect x="3130" y="800" width="470" height="54" rx="18"
+        fill="#edf7f2" stroke="#b8dcc8" stroke-width="2" stroke-dasharray="8 7"/>
+  <text x="3365" y="836" text-anchor="middle"
+        font-family="Noto Sans CJK SC, sans-serif"
+        font-size="22" font-weight="700" fill="#2f6f4e">结构化输出</text>
+
+  <!-- Debug panel -->
+  <rect x="120" y="970" width="2240" height="780" rx="28"
+        fill="#fbfdff" stroke="#a9c9df" stroke-width="3"/>
+  <text x="160" y="1030" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="30" font-weight="700" fill="#173f5f">调试图输出 / DEBUG OVERLAY</text>
+  <text x="160" y="1075" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="22" fill="#486879">用于检查掩膜与候选形成过程，不参与正式控制判断</text>
+
+  <rect x="170" y="1130" width="1000" height="250" rx="20"
+        fill="#eef7fd" stroke="#7aaac8" stroke-width="3"/>
+  <text x="210" y="1190" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="25" font-weight="700" fill="#173f5f">绿色掩膜</text>
+  <rect x="210" y="1230" width="210" height="90" rx="12" fill="#bfe8c7"/>
+  <path d="M240 1295 C300 1250 370 1265 400 1295" fill="none"
+        stroke="#24613f" stroke-width="6"/>
+  <text x="470" y="1260" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="22" fill="#426653">半透明命中像素</text>
+  <text x="470" y="1305" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="22" fill="#426653">检查漏检与背景误检</text>
+
+  <rect x="1240" y="1130" width="1000" height="250" rx="20"
+        fill="#eef7fd" stroke="#7aaac8" stroke-width="3"/>
+  <text x="1280" y="1190" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="25" font-weight="700" fill="#173f5f">组件与候选</text>
+  <polyline points="1300,1300 1370,1230 1490,1255 1560,1315"
+            fill="none" stroke="#00a6c8" stroke-width="6"/>
+  <polyline points="1510,1230 1640,1235 1695,1305 1580,1330"
+            fill="none" stroke="#f2a900" stroke-width="5"/>
+  <text x="1300" y="1350" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="21" fill="#426653">青色：原始碎片</text>
+  <text x="1580" y="1350" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="21" fill="#8a6400">橙色：遮挡风险</text>
+
+  <rect x="170" y="1430" width="2070" height="250" rx="20"
+        fill="#f4f8fb" stroke="#c9ddea" stroke-width="2"/>
+  <text x="210" y="1490" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="25" font-weight="700" fill="#173f5f">候选状态</text>
+  <rect x="230" y="1540" width="54" height="28" rx="6" fill="#2f9e55"/>
+  <text x="300" y="1565" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="23" fill="#2f6f4e">A  接受</text>
+  <rect x="650" y="1540" width="54" height="28" rx="6" fill="#f2a900"/>
+  <text x="720" y="1565" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="23" fill="#8a6400">O  接受但疑似遮挡</text>
+  <rect x="1240" y="1540" width="54" height="28" rx="6" fill="#c23b3b"/>
+  <text x="1310" y="1565" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="23" fill="#8b2b2b">R  拒绝</text>
+  <text x="1720" y="1565" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="22" fill="#486879">详细原因：终端日志</text>
+  <text x="210" y="1630" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="21" fill="#486879">颜色仅解释候选状态；具体阈值与日志不在图中展开</text>
+
+  <!-- Boundary panel -->
+  <rect x="2440" y="970" width="1280" height="780" rx="28"
+        fill="#fffafa" stroke="#dfb9b9" stroke-width="3" stroke-dasharray="10 8"/>
+  <text x="2480" y="1030" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="30" font-weight="700" fill="#8b2b2b">阶段边界</text>
+  <text x="2480" y="1075" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="22" fill="#765555">检测成功只代表“候选存在”</text>
+
+  <rect x="2500" y="1135" width="1160" height="76" rx="16"
+        fill="#eef7fd" stroke="#92b9d2" stroke-width="2"/>
+  <text x="2580" y="1185" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="25" font-weight="700" fill="#173f5f">绿色候选</text>
+  <text x="3430" y="1185" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="21" fill="#486879">已输出</text>
+
+  <text x="3080" y="1255" text-anchor="middle"
+        font-family="Noto Sans CJK SC, sans-serif"
+        font-size="34" fill="#c23b3b">≠</text>
+  <rect x="2500" y="1290" width="1160" height="76" rx="16"
+        fill="#f5f9fc" stroke="#c9ddea" stroke-width="2"/>
+  <text x="2580" y="1340" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="25" font-weight="700" fill="#456579">四边形 / 四角点</text>
+  <text x="3400" y="1340" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="21" fill="#486879">未实现</text>
+
+  <text x="3080" y="1413" text-anchor="middle"
+        font-family="Noto Sans CJK SC, sans-serif"
+        font-size="34" fill="#c23b3b">≠</text>
+  <rect x="2500" y="1448" width="1160" height="76" rx="16"
+        fill="#f5f9fc" stroke="#c9ddea" stroke-width="2"/>
+  <text x="2580" y="1498" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="25" font-weight="700" fill="#456579">相机位姿 / PnP</text>
+  <text x="3400" y="1498" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="21" fill="#486879">未实现</text>
+
+  <text x="3080" y="1571" text-anchor="middle"
+        font-family="Noto Sans CJK SC, sans-serif"
+        font-size="34" fill="#c23b3b">≠</text>
+  <rect x="2500" y="1606" width="1160" height="76" rx="16"
+        fill="#fff5f2" stroke="#dfb9b9" stroke-width="2"/>
+  <text x="2580" y="1656" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="25" font-weight="700" fill="#8b2b2b">允许释放</text>
+  <text x="3400" y="1656" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="21" fill="#8b4b4b">未实现</text>
+
+  <!-- Footer -->
+  <line x1="120" y1="1840" x2="3720" y2="1840" stroke="#d4e2eb" stroke-width="2"/>
+  <text x="120" y="1905" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="22" fill="#5a7484">输入：BGR 实拍图</text>
+  <text x="1050" y="1905" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="22" fill="#5a7484">输出：像素级候选 + 质量状态</text>
+  <text x="2400" y="1905" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="22" fill="#5a7484">验证：13 张静态实拍图</text>
+  <text x="3320" y="1905" font-family="Noto Sans CJK SC, sans-serif"
+        font-size="22" fill="#5a7484">状态：候选检测阶段</text>
+</svg>
